@@ -3,9 +3,15 @@
 class PlayScene :
     public GameObject
 {
+    int hmodel_;
+public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）
-       PlayScene(GameObject * parent);
+       
+    PlayScene(GameObject * parent);
+
+    //デストラクタ
+       ~PlayScene();
 
     //初期化
     void Initialize() override;

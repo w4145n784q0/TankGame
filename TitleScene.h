@@ -3,9 +3,14 @@
 class TitleScene :
     public GameObject
 {
+    int hmodel_;
+public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）
     TitleScene(GameObject* parent);
+
+    //デストラクタ
+    ~TitleScene();
 
     //初期化
     void Initialize() override;
