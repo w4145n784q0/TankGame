@@ -4,6 +4,8 @@ class Tank :
     public GameObject
 {
     int hmodel_;
+    XMVECTOR front_;//前ベクトル　z方向大きさ1
+    float speed_;//0.05 0.05*60 m/s
 public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）
