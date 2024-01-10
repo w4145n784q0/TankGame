@@ -2,7 +2,7 @@
 #include"Engine/Model.h"
 #include"Ground.h"
 #include"Tank.h"
-
+#include"TankHead.h"
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent,"PlayScene"),hmodel_(-1)
 {
@@ -16,8 +16,6 @@ void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
 	Instantiate<Tank>(this);
-
-	
 }
 
 void PlayScene::Update()

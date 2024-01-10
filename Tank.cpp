@@ -3,9 +3,10 @@
 #include"Engine/Input.h"
 #include"Engine/Debug.h"
 #include"Ground.h"
+#include"TankHead.h"
 
 Tank::Tank(GameObject* parent)
-	:GameObject( parent,"Tank"),hmodel_(-1)
+	:GameObject(parent, "Tank"), hmodel_(-1), front_({ 0,0,1,0 }), speed_(0.05)
 {
 }
 
@@ -16,10 +17,9 @@ Tank::~Tank()
 
 void Tank::Initialize()
 {
-	hmodel_ = Model::Load("Model\\TankBody.fbx");
+	hmodel_ = Model::Load("Model\\TankBody2.fbx");
 	assert(hmodel_ >= 0);
-	front_ = { 0,0,1,0 };
-	speed_ = 0.05;
+	Instantiate<TankHead>(this);//タンクcppにタンクヘッドを初期化
 }
 
 void Tank::Update()
