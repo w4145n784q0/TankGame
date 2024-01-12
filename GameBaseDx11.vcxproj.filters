@@ -105,11 +105,24 @@
     <ClCompile Include="Engine\VFX.cpp">
       <Filter>01Engine\ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="Ground.cpp" />
-    <ClCompile Include="Tank.cpp" />
-    <ClCompile Include="TankHead.cpp" />
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Ground.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="Tank.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="TankHead.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scenes\Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -182,12 +195,25 @@
     <ClInclude Include="Engine\VFX.h">
       <Filter>01Engine\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="Ground.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Tank.h" />
-    <ClInclude Include="TankHead.h" />
+    <ClInclude Include="Bullet.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Ground.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScene.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="Tank.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="TankHead.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scenes\Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
