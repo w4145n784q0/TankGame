@@ -3,6 +3,7 @@
 #include"Ground.h"
 #include"Tank.h"
 #include"TankHead.h"
+#include"Enemy.h"
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent,"PlayScene"),hmodel_(-1)
 {
@@ -16,6 +17,7 @@ void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
 	Instantiate<Tank>(this);
+	Instantiate<Enemy>(this);
 }
 
 void PlayScene::Update()

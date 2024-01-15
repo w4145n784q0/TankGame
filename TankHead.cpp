@@ -30,6 +30,9 @@ void TankHead::Update()
 	}
 	if (Input::IsKeyDown(DIK_SPACE))
 	{
+		//XMFLOATÇÕï€ë∂ÇÃÇΩÇﬂÇÃå^(åvéZÇ≈Ç´Ç»Ç¢)Å@VECTORå^ÇÕåvéZÇ…égÇ§
+
+		//
 		XMFLOAT3 CannonTopPos = Model::GetBonePosition(hModel_, "CannonPos");
 		XMFLOAT3 CannonRootPos = Model::GetBonePosition(hModel_, "CannonRoot");
 		
@@ -43,7 +46,7 @@ void TankHead::Update()
 		Bullet* pBullet = Instantiate<Bullet>(this->GetParent()->GetParent());
 		pBullet->SetPosition(CannonTopPos);
 		pBullet->SetMoveDir(vmove);
-		pBullet->SetSpeed(0.2);
+		pBullet->SetSpeed(0.3);
 	}
 }
 

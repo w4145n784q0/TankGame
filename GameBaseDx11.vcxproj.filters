@@ -123,6 +123,9 @@
     <ClCompile Include="TitleScene.cpp">
       <Filter>Scenes\Title</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -213,6 +216,9 @@
     </ClInclude>
     <ClInclude Include="TitleScene.h">
       <Filter>Scenes\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Scenes\Play</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
