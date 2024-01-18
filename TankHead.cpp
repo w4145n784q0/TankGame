@@ -32,7 +32,6 @@ void TankHead::Update()
 	{
 		//XMFLOATは保存のための型(計算できない)　VECTOR型は計算に使う
 
-		//
 		XMFLOAT3 CannonTopPos = Model::GetBonePosition(hModel_, "CannonPos");
 		XMFLOAT3 CannonRootPos = Model::GetBonePosition(hModel_, "CannonRoot");
 		
