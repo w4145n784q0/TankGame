@@ -4,6 +4,7 @@
 #include"Tank.h"
 #include"TankHead.h"
 #include"Enemy.h"
+#include"Engine/Camera.h"
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent,"PlayScene"),hmodel_(-1)
 {
@@ -22,6 +23,8 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
+	
+
 }
 
 void PlayScene::Draw()
