@@ -4,11 +4,6 @@
 #include"Tank.h"
 #include"TankHead.h"
 #include"Enemy.h"
-#include"Engine/Camera.h"
-#include"Engine/Text.h"
-#include"Engine/GameObject.h"
-
-
 PlayScene::PlayScene(GameObject* parent)
 	:GameObject(parent,"PlayScene")
 {
@@ -30,12 +25,6 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
-
-	Camera::SetTarget(player->GetPosition());
-	XMFLOAT3 camPos = player->GetPosition();
-	camPos.y += 8;
-	camPos.z -= 15;
-	Camera::SetPosition(camPos);
 }
 
 void PlayScene::Draw()
