@@ -1,5 +1,7 @@
 #include "Bullet.h"
 #include"Engine/Model.h"
+#include"Engine/SphereCollider.h"
+
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent,"Bullet"),hModel_(-1)
@@ -46,3 +48,4 @@ void Bullet::Draw()
 void Bullet::Release()
 {
 }
+

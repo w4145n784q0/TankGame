@@ -33,6 +33,10 @@ public:
     //ŠJ•ú
     void Release() override;
 
+    //‰½‚©‚É“–‚½‚Á‚½
+   //ˆø”FpTarget “–‚½‚Á‚½‘Šè
+   
+
     void SetMoveDir(XMFLOAT3 _move) { moveDir_ = _move; }
     void SetSpeed(float _speed) { BulletSpeed_ = _speed; }
 };

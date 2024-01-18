@@ -1,9 +1,20 @@
 #pragma once
 #include "Engine/GameObject.h"
+
+class Text;
+class Tank;
+
+//残機数をメンバ変数で4作る
+//画面に表示
+//敵の複数配置
+
+
+
 class PlayScene :
     public GameObject
 {
-    int hmodel_;
+    Text* pText;
+    Tank* player;
 public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）

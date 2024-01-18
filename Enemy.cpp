@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Engine/Model.h"
+#include"Engine/SphereCollider.h"
 
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent,"Enemy"),hModel_(-1)
