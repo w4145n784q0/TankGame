@@ -1,15 +1,16 @@
 #pragma once
 #include "Engine/GameObject.h"
-class Enemy :
+class ClearScene :
     public GameObject
 {
-private:
-    int hModel_;
+    int hmodel_;
 public:
-    Enemy(GameObject* parent);
+    // コンストラクタ
+        //引数：parent  親オブジェクト（SceneManager）
+    ClearScene(GameObject* parent);
 
     //デストラクタ
-    ~Enemy();
+    ~ClearScene();
 
     //初期化
     void Initialize() override;
@@ -22,10 +23,5 @@ public:
 
     //開放
     void Release() override;
-
-    //何かに当たった
-    //引数：pTarget 当たった相手
-    void OnCollision(GameObject* pTarget) override;
-
 };
 

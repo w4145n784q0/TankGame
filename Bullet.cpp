@@ -1,7 +1,6 @@
 #include "Bullet.h"
 #include"Engine/Model.h"
-#include"Engine/SphereCollider.h"
-
+#include "Engine/SphereCollider.h"
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent,"Bullet"),hModel_(-1)
@@ -16,7 +15,9 @@ void Bullet::Initialize()
 {
 	hModel_ = Model::Load("Model\\Bullet.fbx");
 	assert(hModel_ >= 0);
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 0.3);
+	/*SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 0.3f);
+	AddCollider(collision);*/
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 0.5f);
 	AddCollider(collision);
 }
 
@@ -30,8 +31,8 @@ void Bullet::Update()
 	//movedir -> xmvector dir;
 	//pos -> pos + bulletspeed * dir;
 
-	this->moveDir_.y = this->moveDir_.y - 0.01;//yÀ•W‚ğ—‚Æ‚·
-	//moveDir_ = {moveDir_.x, moveDir_.y - 0.01f, moveDir_.z };
+	//this->moveDir_.y = this->moveDir_.y - 0.01;//yÀ•W‚ğ—‚Æ‚·
+	moveDir_ = {moveDir_.x, moveDir_.y - 0.01f, moveDir_.z };
 
 	if (transform_.position_.y < -20){
 		this->KillMe();
