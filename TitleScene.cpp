@@ -1,7 +1,7 @@
 #include "TitleScene.h"
 #include"Engine/Model.h"
 #include"Engine/Input.h"
-#include"Engine/SceneManager.h
+#include"Engine/SceneManager.h"
 
 TitleScene::TitleScene(GameObject* parent)
 	:GameObject(parent,"TitleScene"),hmodel_(-1)

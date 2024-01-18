@@ -1,9 +1,11 @@
 #include "Bullet.h"
 #include"Engine/Model.h"
+//#include "Engine/SphereCollider.h"
 #include "Engine/SphereCollider.h"
 
+
 Bullet::Bullet(GameObject* parent)
-	:GameObject(parent,"Bullet"),hModel_(-1)
+	:GameObject(parent,"Bullet"),hModel_(-1),BulletSpeed_(0),moveDir_(0,0,0)
 {
 }
 
@@ -17,13 +19,14 @@ void Bullet::Initialize()
 	assert(hModel_ >= 0);
 	/*SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 0.3f);
 	AddCollider(collision);*/
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 0.5f);
+	
+
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 1.2f);
 	AddCollider(collision);
 }
 
 void Bullet::Update()
 {
-	//transform_.position_.z += 0.1;
 	transform_.position_.x = transform_.position_.x + moveDir_.x * BulletSpeed_;
 	transform_.position_.y = transform_.position_.y + moveDir_.y * BulletSpeed_;
 	transform_.position_.z = transform_.position_.z + moveDir_.z * BulletSpeed_;
