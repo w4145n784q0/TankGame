@@ -94,8 +94,8 @@ void Tank::Update()
 			break;
 		case CAM_TYPE::TPS_NO_ROT_TYPE:
 			XMFLOAT3 campos = transform_.position_;
-			transform_.position_.y = transform_.position_.y + 5.0f;
-			transform_.position_.z = transform_.position_.z - 10.0f;
+			campos.y = transform_.position_.y + 5.0f;
+			campos.z = transform_.position_.z - 10.0f;
 			Camera::SetPosition(campos);
 			Camera::SetTarget(transform_.position_);
 			break;
