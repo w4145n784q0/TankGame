@@ -36,7 +36,6 @@ void Bullet::Update()
 
 	//this->moveDir_.y = this->moveDir_.y - 0.01;//yÀ•W‚ğ—‚Æ‚·
 	moveDir_ = {moveDir_.x, moveDir_.y - 0.01f, moveDir_.z };
-
 	if (transform_.position_.y < -20){
 		this->KillMe();
 	}

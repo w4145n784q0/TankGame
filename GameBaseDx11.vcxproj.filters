@@ -132,8 +132,12 @@
     <ClCompile Include="ClearScene.cpp">
       <Filter>Scenes\Clear</Filter>
     </ClCompile>
-    <ClCompile Include="UIplay.cpp" />
-    <ClCompile Include="UIplayNumber.cpp" />
+    <ClCompile Include="UIplay.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="UIplayNumber.cpp">
+      <Filter>Scenes\Play</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -231,8 +235,12 @@
     <ClInclude Include="ClearScene.h">
       <Filter>Scenes\Clear</Filter>
     </ClInclude>
-    <ClInclude Include="UIplay.h" />
-    <ClInclude Include="UIplayNumber.h" />
+    <ClInclude Include="UIplay.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="UIplayNumber.h">
+      <Filter>Scenes\Play</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">
