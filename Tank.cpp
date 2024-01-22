@@ -2,9 +2,10 @@
 #include"Engine/Model.h"
 #include"Engine/Input.h"
 #include"Engine/Debug.h"
+#include"Engine/Camera.h"
 #include"Ground.h"
 #include"TankHead.h"
-#include"Engine/Camera.h"
+
 
 //カメラ制御
 enum CAM_TYPE
@@ -36,10 +37,11 @@ void Tank::Initialize()
 
 void Tank::Update()
 {
-	XMMATRIX rotY = XMMatrixIdentity();//行列
-	XMVECTOR move{0,0,0,0};
+	XMMATRIX rotY = XMMatrixIdentity();//行列　//XMMatrixIdentityは何もしない行列
+	XMVECTOR move{0,0,0,0};//xyz全部０
 	XMVECTOR rotVec{ 0,0,0,0 };
 	float dir = 0;
+	XMVECTOR fpsEye{ 0,1,5,0 };
 	
 	if (Input::IsKey(DIK_W))
 	{
@@ -61,15 +63,15 @@ void Tank::Update()
 	}
 
 	//回転行列を求める
-	rotY = XMMatrixRotationY(XMConvertToRadians(transform_.rotate_.y));;
+	rotY = XMMatrixRotationY(XMConvertToRadians(transform_.rotate_.y));//y軸に自機の回転した分だけ回転させる行列
 	//ベクトルの回転結果を求める
-	rotVec = XMVector3TransformCoord(front_, rotY);
+	rotVec = XMVector3TransformCoord(front_, rotY);//（ベクトルfrontを行列rotYで変形）
 	move = speed_ * rotVec;
-	XMVECTOR pos = XMLoadFloat3(&(transform_.position_));
+	XMVECTOR pos = XMLoadFloat3(&(transform_.position_));//自機の場所
 
 
 	pos = pos + dir * move;
-	XMStoreFloat3(&(transform_.position_), pos);
+	XMStoreFloat3(&(transform_.position_), pos);//XMStoreFloat3(行列,ベクトル)
 
 
 
@@ -127,6 +129,10 @@ void Tank::Update()
 
 
 		case CAM_TYPE::FPS_TYPE:
+			Camera::SetPosition(transform_.position_);
+			XMFLOAT3 camTarget;
+			XMStoreFloat3(&camTarget, pos + move);
+			Camera::SetPosition(camTarget);
 			break;
 		default:
 			break;
