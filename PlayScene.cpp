@@ -19,7 +19,7 @@ namespace
 }
 
 PlayScene::PlayScene(GameObject* parent)
-	:GameObject(parent,"PlayScene")
+	:GameObject(parent,"PlayScene"),isChange(false)
 {
 }
 
@@ -58,3 +58,20 @@ void PlayScene::Release()
 {
 	
 }
+
+//int PlayScene::SaveEnemyNum()
+//{
+//	int i = enemyNum;
+//	return i;
+//}
+
+bool PlayScene::IsChangeNumber()
+{
+	if (isChange) {
+		return true;
+	}
+
+	return false;
+}
+
+

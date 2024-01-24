@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include"PlayScene.h"
 #include<vector>
 using std::vector;
 
@@ -11,11 +12,14 @@ class UIplayNumber :
     public GameObject
 {
     int hPict_;
-    int hPict_2;
+   // int hPict_2;
     Transform uiNum;
-    Transform uiNum_2;
+    //Transform uiNum_2;
     //vector<vector<float>> frame_;
     vector<Transform> frame_;//数字用
+    PlayScene* pScene_;
+    int tensPlace_;//十の位
+    int onePlace_;//一の位
     
 public:
     // コンストラクタ
@@ -36,5 +40,7 @@ public:
 
     //開放
     void Release() override;
+   
+
 };
 

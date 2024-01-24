@@ -16,6 +16,7 @@ class PlayScene :
     Text* pText;
     Tank* player;
     int enemyNum;
+    bool isChange;
 public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）
@@ -40,5 +41,10 @@ public:
     void DescEnemy() { enemyNum--; }
     bool IsEnemyLeft() { return enemyNum > 0; }
     int GetEnemyNum() { return enemyNum; }
+
+    int SaveEnemyNum();
+    void ChangeNumberTrue() { isChange = true; }
+    void ChangeNumberFalse() { isChange = false; }
+    bool IsChangeNumber();
 };
 

@@ -21,6 +21,7 @@ void UIplay::Initialize()
 
 void UIplay::Update()
 {
+	//ui.scale_ = { 0.5,0.5,1.0 };
 	ui.position_ = { -0.6,0.85,0 };
 }
 

@@ -72,8 +72,10 @@ void Enemy::OnCollision(GameObject* pTarget)
 {
 	if (pTarget->GetObjectName() == "Bullet") {
 		pScene_ = (PlayScene*)GetParent();
+		//pScene_->SaveEnemyNum();
 		pScene_->DescEnemy();
 		this->KillMe();
 		pTarget->KillMe();
+		pScene_->ChangeNumberTrue();
 	}
 }
