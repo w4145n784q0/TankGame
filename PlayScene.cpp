@@ -31,8 +31,7 @@ void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
 	player = Instantiate<Tank>(this);
-	Instantiate<UIplay>(this);
-	Instantiate<UIplayNumber>(this);
+	
 
 	enemyNum = ENEMY_NUM;
 	for (int i = 0; i < ENEMY_NUM; i++) {
@@ -40,7 +39,8 @@ void PlayScene::Initialize()
 	}
 	pText = new  Text;
 	pText->Initialize();
-	
+	Instantiate<UIplay>(this);
+	Instantiate<UIplayNumber>(this);
 }
 
 void PlayScene::Update()

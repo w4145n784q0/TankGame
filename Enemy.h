@@ -1,10 +1,12 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include"PlayScene.h"
 class Enemy :
     public GameObject
 {
 private:
-    int hModel_;
+    int hModel_; 
+    PlayScene* pScene_;
 public:
     Enemy(GameObject* parent);
 

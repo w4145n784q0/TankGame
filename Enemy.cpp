@@ -2,6 +2,7 @@
 #include "Engine/Model.h"
 #include"Engine/SphereCollider.h"
 #include"Ground.h"
+#include"PlayScene.h"
 
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent,"Enemy"),hModel_(-1)
@@ -16,6 +17,7 @@ void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Model\\kinoko2nd_animation.fbx");
 	assert(hModel_ >= 0);
+	//pScene_ = (PlayScene*)GetParent();
 	
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0),0.5f);
 	AddCollider(collision);
@@ -69,6 +71,8 @@ void Enemy::Release()
 void Enemy::OnCollision(GameObject* pTarget)
 {
 	if (pTarget->GetObjectName() == "Bullet") {
+		pScene_ = (PlayScene*)GetParent();
+		pScene_->DescEnemy();
 		this->KillMe();
 		pTarget->KillMe();
 	}

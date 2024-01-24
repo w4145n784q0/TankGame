@@ -1,5 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
+#include"PlayScene.h"
 class Bullet :
     public GameObject
 {
@@ -7,6 +8,7 @@ private:
     int hModel_;//バレットのモデル番号
     float BulletSpeed_;
     XMFLOAT3 moveDir_;
+    
 public:
     // コンストラクタ
     //引数：parent  親オブジェクト（SceneManager）

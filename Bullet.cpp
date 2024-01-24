@@ -23,6 +23,7 @@ void Bullet::Initialize()
 
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 1.2f);
 	AddCollider(collision);
+	
 }
 
 void Bullet::Update()

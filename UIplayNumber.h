@@ -3,17 +3,19 @@
 #include<vector>
 using std::vector;
 
-const float frameWidth_ = 64.0;
+const float frameWidth_ = 51.2;
 const float frameHeight_ = 118.0;
 const int frameMax{ 9 };
 
 class UIplayNumber :
     public GameObject
 {
-    int hmodel_;
+    int hPict_;
+    int hPict_2;
     Transform uiNum;
-    vector<vector<float>> frame_;
-    //vector<float> frame_;
+    Transform uiNum_2;
+    //vector<vector<float>> frame_;
+    vector<Transform> frame_;//数字用
     
 public:
     // コンストラクタ
