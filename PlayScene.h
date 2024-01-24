@@ -41,8 +41,6 @@ public:
     void DescEnemy() { enemyNum--; }
     bool IsEnemyLeft() { return enemyNum > 0; }
     int GetEnemyNum() { return enemyNum; }
-
-    int SaveEnemyNum();
     void ChangeNumberTrue() { isChange = true; }
     void ChangeNumberFalse() { isChange = false; }
     bool IsChangeNumber();

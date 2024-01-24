@@ -11,15 +11,15 @@ const int frameMax{ 9 };
 class UIplayNumber :
     public GameObject
 {
-    int hPict_;
-   // int hPict_2;
-    Transform uiNum;
-    //Transform uiNum_2;
-    //vector<vector<float>> frame_;
+    int Number_;
+    int EnemyDisplay_;
+    Transform ui;
+    Transform uiNum;//一の位
+    Transform uiNum_2;//十の位
     vector<Transform> frame_;//数字用
     PlayScene* pScene_;
-    int tensPlace_;//十の位
     int onePlace_;//一の位
+    int tensPlace_;//十の位
     
 public:
     // コンストラクタ

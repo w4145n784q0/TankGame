@@ -157,7 +157,6 @@
     <ClCompile Include="TankHead.cpp" />
     <ClCompile Include="TestScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
-    <ClCompile Include="UIplay.cpp" />
     <ClCompile Include="UIplayNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -194,7 +193,6 @@
     <ClInclude Include="TankHead.h" />
     <ClInclude Include="TestScene.h" />
     <ClInclude Include="TitleScene.h" />
-    <ClInclude Include="UIplay.h" />
     <ClInclude Include="UIplayNumber.h" />
   </ItemGroup>
   <ItemGroup>

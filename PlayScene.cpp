@@ -8,7 +8,6 @@
 #include"Engine/Text.h"
 #include"Engine/GameObject.h"
 #include"Engine/SceneManager.h"
-#include"UIplay.h"
 #include"UIplayNumber.h"
 
 
@@ -39,7 +38,7 @@ void PlayScene::Initialize()
 	}
 	pText = new  Text;
 	pText->Initialize();
-	Instantiate<UIplay>(this);
+	
 	Instantiate<UIplayNumber>(this);
 }
 
@@ -59,11 +58,6 @@ void PlayScene::Release()
 	
 }
 
-//int PlayScene::SaveEnemyNum()
-//{
-//	int i = enemyNum;
-//	return i;
-//}
 
 bool PlayScene::IsChangeNumber()
 {
