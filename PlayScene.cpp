@@ -44,7 +44,11 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
-	
+	if (FindObject("Enemy") == nullptr)
+	{
+		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
+		pSceneManager->ChangeScene(SCENE_ID_CLEAR);
+	}
 }
 
 void PlayScene::Draw()
