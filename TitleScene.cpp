@@ -22,7 +22,7 @@ void TitleScene::Initialize()
 void TitleScene::Update()
 {
 	
-	if (Input::IsKey(DIK_SPACE))
+	if (Input::IsKey(DIK_SPACE))//スペースキーを押したらゲームスタート
 	{
 		SceneManager* pSceneManager = (SceneManager*)FindObject("SceneManager");
 		pSceneManager->ChangeScene(SCENE_ID_PLAY);

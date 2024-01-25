@@ -21,6 +21,7 @@ void Enemy::Initialize()
 	
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0),0.5f);
 	AddCollider(collision);
+
 	/*
 	//アニメーションのフレーム数をセット
 	//引数：handle		設定したいモデルの番号
@@ -75,6 +76,12 @@ void Enemy::OnCollision(GameObject* pTarget)
 		pScene_->DescEnemy();
 		this->KillMe();
 		pTarget->KillMe();
+		pScene_->ChangeNumberTrue();
+	}
+	if (pTarget->GetObjectName() == "Tank") {
+		pScene_ = (PlayScene*)GetParent();
+		pScene_->DescEnemy();
+		this->KillMe();
 		pScene_->ChangeNumberTrue();
 	}
 }

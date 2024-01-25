@@ -5,7 +5,7 @@ class Tank :
 {
     int hmodel_;
     XMVECTOR front_;//前ベクトル　z方向大きさ1
-    float speed_;//0.05 0.05*60 m/s
+    float speed_;
     int camState_;
 public:
     // コンストラクタ
@@ -26,5 +26,9 @@ public:
 
     //開放
     void Release() override;
+
+    //何かに当たった
+  //引数：pTarget 当たった相手
+   void OnCollision(GameObject* pTarget) override;
 };
 

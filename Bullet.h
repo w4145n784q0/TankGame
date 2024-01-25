@@ -7,7 +7,7 @@ class Bullet :
 private:
     int hModel_;//バレットのモデル番号
     float BulletSpeed_;
-    XMFLOAT3 moveDir_;
+    XMFLOAT3 moveDir_;//弾の進行方向
     
 public:
     // コンストラクタ
@@ -35,11 +35,10 @@ public:
     //開放
     void Release() override;
 
-    //何かに当たった
-   //引数：pTarget 当たった相手
    
-
+    //進行方向のセット関数
     void SetMoveDir(XMFLOAT3 _move) { moveDir_ = _move; }
+    //スピードのセット関数
     void SetSpeed(float _speed) { BulletSpeed_ = _speed; }
 };
 

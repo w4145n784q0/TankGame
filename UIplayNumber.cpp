@@ -24,16 +24,13 @@ void UIplayNumber::Initialize()
 
 	tensPlace_ = 3;
 	onePlace_ = 0;
-	/*hPict_2 = Image::Load("Model\\UI2_1_.png");
-	assert(hPict_2 >= 0);*/
 }
 
 void UIplayNumber::Update()
 {
 	pScene_ = (PlayScene*)GetParent();
-	//Transform trans;
-	ui.position_ = { -0.6,0.85,0 };
-	uiNum.position_ = { -0.32,0.85,0 };//•\Ž¦êŠ
+	ui.position_ = { -0.6,0.85,0 };//•\Ž¦êŠ
+	uiNum.position_ = { -0.32,0.85,0 };
 	uiNum_2.position_ = { -0.4,0.85,0 };
 
 	if (pScene_->IsChangeNumber())

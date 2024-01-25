@@ -24,6 +24,6 @@ public:
     //開放
     void Release() override;
 
-    //
+    //モデル番号のゲット関数
     int GetModelHandle() { return(hmodel_); }
 };

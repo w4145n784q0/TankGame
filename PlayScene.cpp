@@ -18,7 +18,7 @@ namespace
 }
 
 PlayScene::PlayScene(GameObject* parent)
-	:GameObject(parent,"PlayScene"),isChange(false)
+	:GameObject(parent,"PlayScene"),isChange(false),enemyNum(0)
 {
 }
 
@@ -53,7 +53,7 @@ void PlayScene::Update()
 
 void PlayScene::Draw()
 {
-	pText->Draw(30, 30, "");
+	//pText->Draw(30, 30, "");
 }
 
 

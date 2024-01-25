@@ -1,8 +1,6 @@
 #pragma once
 #include "Engine/GameObject.h"
 #include"PlayScene.h"
-#include<vector>
-using std::vector;
 
 const float frameWidth_ = 51.2;
 const float frameHeight_ = 118.0;
@@ -11,12 +9,11 @@ const int frameMax{ 9 };
 class UIplayNumber :
     public GameObject
 {
-    int Number_;
-    int EnemyDisplay_;
-    Transform ui;
+    int Number_;//数字表示
+    int EnemyDisplay_;//「残りの数～」表示
+    Transform ui;//HUDの表示
     Transform uiNum;//一の位
     Transform uiNum_2;//十の位
-    vector<Transform> frame_;//数字用
     PlayScene* pScene_;
     int onePlace_;//一の位
     int tensPlace_;//十の位

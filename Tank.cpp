@@ -5,7 +5,7 @@
 #include"Engine/Camera.h"
 #include"Ground.h"
 #include"TankHead.h"
-
+#include "Engine/SphereCollider.h"
 
 //カメラ制御
 enum CAM_TYPE
@@ -33,12 +33,15 @@ void Tank::Initialize()
 	hmodel_ = Model::Load("Model\\TankBody2.fbx");
 	assert(hmodel_ >= 0);
 	Instantiate<TankHead>(this);//タンクcppにタンクヘッドを初期化
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), 1.2f);
+	AddCollider(collision);
 }
 
 void Tank::Update()
 {
+
 	XMMATRIX rotY = XMMatrixIdentity();//行列　//XMMatrixIdentityは何もしない行列
-	XMVECTOR move{0,0,0,0};//xyz全部０
+	XMVECTOR move{0,0,0,0};//xyz全部0
 	XMVECTOR rotVec{ 0,0,0,0 };
 	float dir = 0;
 	XMVECTOR fpsEye{ 0,1,5,0 };
@@ -89,7 +92,7 @@ void Tank::Update()
 		transform_.position_.y = -data.dist;
 	}
 
-	if (Input::IsKeyDown(DIK_Z))
+	if (Input::IsKeyDown(DIK_Z))//タンクの視点変更
 	{
 		camState_++;
 		//camState_ = (++camState_) % (CAM_TYPE::MAX);
@@ -150,4 +153,12 @@ void Tank::Draw()
 
 void Tank::Release()
 {
+}
+
+void Tank::OnCollision(GameObject* pTarget)
+{
+	if (pTarget->GetObjectName() == "Enemy")
+	{
+		speed_ += 0.005;//Enemyとぶつかるとスピードアップ
+	}
 }
