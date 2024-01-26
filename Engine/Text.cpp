@@ -2,8 +2,8 @@
 #include "Direct3D.h"
 #include "Text.h"
 
-Text::Text() : hPict_(-1), width_(16), height_(32), fileName_("char.png"), rowLength_(16)
-{
+Text::Text() : hPict_(-1), width_(60), height_(70), fileName_("char.png"), rowLength_(16)
+{// hPict_(-1), width_(16), height_(32), fileName_("char.png"), rowLength_(16)
 }
 
 Text::~Text()

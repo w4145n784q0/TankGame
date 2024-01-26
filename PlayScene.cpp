@@ -10,8 +10,6 @@
 #include"Engine/SceneManager.h"
 #include"UIplayNumber.h"
 
-
-
 namespace
 {
 	const int ENEMY_NUM{ 30 };
@@ -36,6 +34,7 @@ void PlayScene::Initialize()
 	for (int i = 0; i < ENEMY_NUM; i++) {
 		Instantiate<Enemy>(this);
 	}
+
 	pText = new  Text;
 	pText->Initialize();
 	

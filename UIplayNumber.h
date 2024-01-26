@@ -11,9 +11,11 @@ class UIplayNumber :
 {
     int Number_;//数字表示
     int EnemyDisplay_;//「残りの数～」表示
+    int Howplay_;//操作方法
     Transform ui;//HUDの表示
     Transform uiNum;//一の位
     Transform uiNum_2;//十の位
+    Transform ui_howplay;//十の位
     PlayScene* pScene_;
     int onePlace_;//一の位
     int tensPlace_;//十の位

@@ -44,7 +44,6 @@ void Tank::Update()
 	XMVECTOR move{0,0,0,0};//xyz‘S•”0
 	XMVECTOR rotVec{ 0,0,0,0 };
 	float dir = 0;
-	XMVECTOR fpsEye{ 0,1,5,0 };
 	
 	if (Input::IsKey(DIK_W))
 	{

@@ -6,7 +6,7 @@
 using std::string;
 
 UIplayNumber::UIplayNumber(GameObject* parent)
-	:GameObject(parent, "UIplayNumber"), Number_(-1), EnemyDisplay_(-1)
+	:GameObject(parent, "UIplayNumber"), Number_(-1), EnemyDisplay_(-1),Howplay_(-1)
 {
 	
 }
@@ -21,7 +21,8 @@ void UIplayNumber::Initialize()
 	assert(Number_ >= 0);
 	EnemyDisplay_ = Image::Load("Model\\UI1_.png");
 	assert(EnemyDisplay_ >= 0);
-
+	Howplay_ = Image::Load("Model\\UI3_.png");
+	assert(Howplay_ >= 0);
 	tensPlace_ = 3;
 	onePlace_ = 0;
 }
@@ -32,6 +33,7 @@ void UIplayNumber::Update()
 	ui.position_ = { -0.6,0.85,0 };//•\Ž¦êŠ
 	uiNum.position_ = { -0.32,0.85,0 };
 	uiNum_2.position_ = { -0.4,0.85,0 };
+	ui_howplay.position_ = { -0.6,-0.65,0 };
 
 	if (pScene_->IsChangeNumber())
 	{
@@ -67,6 +69,9 @@ void UIplayNumber::Draw()
 	Image::SetRect(Number_, frameWidth_* tensPlace_, 0, frameWidth_, frameHeight_);
 	Image::SetTransform(Number_, uiNum_2);
 	Image::Draw(Number_);
+
+	Image::SetTransform(Howplay_, ui_howplay);
+	Image::Draw(Howplay_);
 }
 
 void UIplayNumber::Release()
