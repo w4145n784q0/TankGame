@@ -15,7 +15,7 @@ ClearScene::~ClearScene()
 
 void ClearScene::Initialize()
 {
-	hmodel_ = Image::Load("Model\\TankWin.png");
+	hmodel_ = Image::Load("Model\\Tank_Win.png");
 	assert(hmodel_ >= 0);
 
 }
