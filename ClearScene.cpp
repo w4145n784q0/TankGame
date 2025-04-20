@@ -5,7 +5,7 @@
 #include"Engine/Input.h"
 
 ClearScene::ClearScene(GameObject* parent)
-	:GameObject(parent, "ClearScene"), hmodel_(-1)
+	:GameObject(parent, "ClearScene"), hImage_(-1)
 {
 }
 
@@ -15,16 +15,16 @@ ClearScene::~ClearScene()
 
 void ClearScene::Initialize()
 {
-	hmodel_ = Image::Load("Model\\Tank_Win.png");
-	assert(hmodel_ >= 0);
+	hImage_ = Image::Load("Model\\Tank_Win.png");
+	assert(hImage_ >= 0);
 
 }
 
 void ClearScene::Update()
 {
 	//マウスカーソルの位置
-	XMFLOAT3 mouse;
-	mouse = Input::GetMousePosition();
+	//XMFLOAT3 mouse;
+	//mouse = Input::GetMousePosition();
 
 	if (Input::IsKey(DIK_SPACE))//スペースキーを押したらもう一回プレイ
 	{
@@ -42,8 +42,8 @@ void ClearScene::Update()
 
 void ClearScene::Draw()
 {
-	Image::SetTransform(hmodel_, transform_);
-	Image::Draw(hmodel_);
+	Image::SetTransform(hImage_, transform_);
+	Image::Draw(hImage_);
 }
 
 void ClearScene::Release()

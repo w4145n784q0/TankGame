@@ -3,6 +3,11 @@
 #include"Engine/Input.h"
 #include"Bullet.h"
 
+namespace
+{
+	const float speed = 0.2f;
+}
+
 TankHead::TankHead(GameObject* parent)
 	:GameObject(parent, "TankHead"), hModel_(-1)
 {
@@ -45,7 +50,7 @@ void TankHead::Update()
 		Bullet* pBullet = Instantiate<Bullet>(this->GetParent()->GetParent());
 		pBullet->SetPosition(CannonTopPos);
 		pBullet->SetMoveDir(vmove);
-		pBullet->SetSpeed(0.2);
+		pBullet->SetSpeed(speed);
 	}
 }
 

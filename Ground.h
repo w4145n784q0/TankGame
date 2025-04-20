@@ -3,7 +3,7 @@
 class Ground :
     public GameObject
 {
-    int hmodel_;
+    int hmodel_;//ステージモデル
 public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）

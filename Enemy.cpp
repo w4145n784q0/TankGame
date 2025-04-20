@@ -4,6 +4,15 @@
 #include"Ground.h"
 #include"PlayScene.h"
 
+namespace
+{
+	const float ColliderSize = 0.5f;//当たり判定のサイズ
+	const float distPlus = 0.5f;//敵の高さの調整
+	const float MaxEnemyInit = 25.0f;//敵の出現位置の最大
+	const int startFrame = 0;//アニメフレームの開始
+	const int endFrame = 60;//アニメフレームの終了
+}
+
 Enemy::Enemy(GameObject* parent)
 	:GameObject(parent,"Enemy"),hModel_(-1)
 {
@@ -19,7 +28,7 @@ void Enemy::Initialize()
 	assert(hModel_ >= 0);
 	//pScene_ = (PlayScene*)GetParent();
 	
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0),0.5f);
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0, 0), ColliderSize);
 	AddCollider(collision);
 
 	/*
@@ -29,14 +38,14 @@ void Enemy::Initialize()
 	//引数：endFrame	終了フレーム
 	//引数：animSpeed	アニメーション速度
 	*/
-	Model::SetAnimFrame(hModel_, 0, 60, 1);//アニメーションのセット
+	Model::SetAnimFrame(hModel_, startFrame, endFrame, 1);//アニメーションのセット
 	float x = (float)rand() / RAND_MAX;//0-1の乱数
 	x = 2.0 * x;//0-5の乱数
-	transform_.position_.x = 25.0 * (x - 1.0);//25.0 * (x - 1.0)の乱数
+	transform_.position_.x = MaxEnemyInit * (x - 1.0);//25.0 * (x - 1.0)の乱数
 
 	float z = (float)rand() / RAND_MAX;//0-1の乱数
 	z = 2.0 * z;//0-5の乱数
-	transform_.position_.z = 25.0 * (z - 1.0);//25.0 * (x - 1.0)の乱数
+	transform_.position_.z = MaxEnemyInit * (z - 1.0);//25.0 * (x - 1.0)の乱数
 	transform_.position_.y = 0;
 
 	Ground* pGround = (Ground*)FindObject("Ground");
@@ -48,7 +57,7 @@ void Enemy::Initialize()
 	Model::RayCast(hGmodel, &data);
 	if (data.hit == true)
 	{
-		transform_.position_.y = -data.dist + 0.5;
+		transform_.position_.y = -data.dist + distPlus;
 	}
 
 

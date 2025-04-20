@@ -5,7 +5,7 @@ class Enemy :
     public GameObject
 {
 private:
-    int hModel_; 
+    int hModel_; //“Gƒ‚ƒfƒ‹
     PlayScene* pScene_;
 public:
     Enemy(GameObject* parent);

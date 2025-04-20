@@ -4,7 +4,7 @@ class TankHead :
     public GameObject
 {
 private:
-    int hModel_;
+    int hModel_;//タンクの砲塔モデル
     //モデル自体はグローバル領域に保存されている
 public:
     // コンストラクタ

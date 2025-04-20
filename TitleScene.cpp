@@ -5,7 +5,7 @@
 #include"Engine/SceneManager.h"
 
 TitleScene::TitleScene(GameObject* parent)
-	:GameObject(parent,"TitleScene"),hmodel_(-1)
+	:GameObject(parent,"TitleScene"),hImage_(-1)
 {
 }
 
@@ -15,8 +15,8 @@ TitleScene::~TitleScene()
 
 void TitleScene::Initialize()
 {
-	hmodel_ = Image::Load("Model\\KinokovsTank.png");
-	assert(hmodel_ >= 0); 
+	hImage_  = Image::Load("Model\\KinokovsTank.png");
+	assert(hImage_ >= 0);
 }
 
 void TitleScene::Update()
@@ -31,8 +31,8 @@ void TitleScene::Update()
 
 void TitleScene::Draw()
 {
-	Image::SetTransform(hmodel_, transform_);
-	Image::Draw(hmodel_);
+	Image::SetTransform(hImage_, transform_);
+	Image::Draw(hImage_);
 }
 
 void TitleScene::Release()

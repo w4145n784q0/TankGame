@@ -3,7 +3,7 @@
 class TitleScene :
     public GameObject
 {
-    int hmodel_;
+    int hImage_;//タイトル画像ハンドル
 public:
     // コンストラクタ
         //引数：parent  親オブジェクト（SceneManager）

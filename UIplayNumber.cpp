@@ -5,6 +5,14 @@
 
 using std::string;
 
+namespace
+{
+	const XMFLOAT3 Hud = { -0.6,0.85,0 };//•\Ž¦êŠ
+	const XMFLOAT3 One = { -0.32,0.85,0 };
+	const XMFLOAT3 Two = { -0.4,0.85,0 };
+	const XMFLOAT3 HowPlay = { -0.6,-0.65,0 };
+}
+
 UIplayNumber::UIplayNumber(GameObject* parent)
 	:GameObject(parent, "UIplayNumber"), Number_(-1), EnemyDisplay_(-1),Howplay_(-1)
 {
@@ -30,10 +38,10 @@ void UIplayNumber::Initialize()
 void UIplayNumber::Update()
 {
 	pScene_ = (PlayScene*)GetParent();
-	ui.position_ = { -0.6,0.85,0 };//•\Ž¦êŠ
-	uiNum.position_ = { -0.32,0.85,0 };
-	uiNum_2.position_ = { -0.4,0.85,0 };
-	ui_howplay.position_ = { -0.6,-0.65,0 };
+	ui.position_ = Hud;//•\Ž¦êŠ
+	uiNum.position_ = One;
+	uiNum_2.position_ = Two;
+	ui_howplay.position_ = HowPlay;
 
 	if (pScene_->IsChangeNumber())
 	{

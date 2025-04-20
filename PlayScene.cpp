@@ -52,7 +52,7 @@ void PlayScene::Update()
 
 void PlayScene::Draw()
 {
-	//pText->Draw(30, 30, "");
+
 }
 
 

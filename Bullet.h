@@ -6,7 +6,7 @@ class Bullet :
 {
 private:
     int hModel_;//バレットのモデル番号
-    float BulletSpeed_;
+    float BulletSpeed_;//弾の速度
     XMFLOAT3 moveDir_;//弾の進行方向
     
 public:
